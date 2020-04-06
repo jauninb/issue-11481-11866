@@ -10,7 +10,9 @@ inputs:
 properties:
 - name: pipeline_multiline_property
   type: textarea
-  value: a pipeline multiline property
+  value: |-
+    a pipeline multiline property - line1
+    line 2
 - name: pipeline_secured_property
   type: secure
   value: ""
@@ -29,5 +31,7 @@ triggers:
     value: ""
   - name: trigger_textarea_property
     type: textarea
-    value: a trigger textarea value
+    value: |-
+      a trigger textarea value - line 1
+      line 2
   type: manual

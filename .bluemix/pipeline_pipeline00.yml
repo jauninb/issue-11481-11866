@@ -1,0 +1,33 @@
+inputs:
+- path: git
+  tag: tekton_pipeline0.7.0
+  type: git
+  service: ${githubconsolidated01}
+- path: git/sample
+  tag: tekton_pipeline0.7.0
+  type: git
+  service: ${githubconsolidated01}
+properties:
+- name: pipeline_multiline_property
+  type: textarea
+  value: a pipeline multiline property
+- name: pipeline_secured_property
+  type: secure
+  value: ""
+- name: pipeline_text_property
+  type: text
+  value: a pipeline text property
+triggers:
+- eventListener: event-listener-simple-clone
+  name: Manual Trigger - 0
+  properties:
+  - name: trigger_text_property
+    type: text
+    value: a trigger text property
+  - name: trigger_secured_property
+    type: secure
+    value: ""
+  - name: trigger_textarea_property
+    type: textarea
+    value: a trigger textarea value
+  type: manual
